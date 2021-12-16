@@ -25,10 +25,20 @@ func main() {
 	}
 	
 	problems := parseLines(lines)
-
+	correctAnswers := 0
+	
 	for i, p := range problems {
 		fmt.Printf("Problem #%d: %s = \n", i+1, p.question)
+		var answer string
+		fmt.Scanf("%s\n", &answer)
+		if answer == p.answer {
+			fmt.Println("Correct!")
+			correctAnswers++
+		} else {
+			fmt.Println("you are ngmi")
+		}
 	}
+	fmt.Printf("you got %d correct out of %d\n", correctAnswers, len(problems))
 }
 
 type problem struct {
